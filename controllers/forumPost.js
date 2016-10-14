@@ -21,3 +21,18 @@ exports.update = function (req, res) {
 exports.delete = function (req, res) {
     res.send('deleted one');
 };
+exports.import = function (req, res) {
+    ForumPost.create(
+        {
+            username: "John_Doh",
+            fname: "John",
+            lname: "Doh"
+        },
+        function (err) {
+            if (err) {
+                return console.log(err);
+            }
+            return res.send(202);
+        }
+    )
+}
