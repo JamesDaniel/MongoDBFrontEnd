@@ -4,10 +4,10 @@
 var Mongoose = require('mongoose');
 Schema = Mongoose.Schema;
 
-var ForumPostSchema = new Schema({
+var MovieRatingsSchema = new Schema({
     username: String,
     fname: String,
     lname: String
 });
 
-Mongoose.model('ForumPost', ForumPostSchema);
+Mongoose.model('MovieRating', MovieRatingsSchema);

@@ -3,12 +3,11 @@
  */
 module.exports = function (app) {
     var webPages = require('./controllers/webPages');
-    var forumPost = require('./controllers/forumPost');
+    var movieRating = require('./controllers/movieRating');
     app.get('/', webPages.index);
-    app.get('/forum_post', forumPost.findAll);
-    app.get('/forum_post/:id', forumPost.findById);
-    app.get('/import', forumPost.import);
-    app.post('/forum_post', forumPost.add);
-    app.put('/forum_post/:id', forumPost.update);
-    app.delete('/forum_post/:id/:rev', forumPost.delete);
+    app.get('/movie_rating', movieRating.findAll);
+    app.get('/movie_rating/:id', movieRating.findById);
+    app.post('/movie_rating', movieRating.add);
+    app.put('/movie_rating/:id', movieRating.update);
+    app.delete('/movie_rating/:id/:rev', movieRating.delete);
 }

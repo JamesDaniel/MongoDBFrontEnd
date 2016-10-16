@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var fs = require('fs');
 
-var mongoUri = 'mongodb://localhost:27017/forum_post';
+var mongoUri = 'mongodb://localhost:27017/movie_rating';
 mongoose.connect(mongoUri);
 var db = mongoose.connection;
 db.on('error', function () {
@@ -15,7 +15,7 @@ var app = express();
 
 app.use(bodyParser());
 
-require('./models/forum_post');
+require('./models/movie_rating');
 require('./routes')(app);
 
 app.listen(3001);
