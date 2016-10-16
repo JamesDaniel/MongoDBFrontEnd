@@ -37,8 +37,7 @@ exports.update = function (req, res) {
 };
 exports.delete = function (req, res) {
     var id = req.params.id;
-    var rev = req.params.rev;
-    MovieRating.remove({'_id': id, '__v': rev}, function (result) {
+    MovieRating.remove({'_id': id}, function (result) {
         return res.send(result);
-    })
+    });
 };

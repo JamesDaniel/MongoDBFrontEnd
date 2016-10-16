@@ -1,4 +1,4 @@
-var movieRating = new MovieRating({ _id: "5803e0bcc2fde41a4925bd2f"});
+var movieRating = new MovieRating({ _id: "5803e100c2fde41a4925bd30"});
 movieRating.fetch({
     success: function (movieRatingResponse) {
         console.log("Found the movieRating: " + movieRatingResponse.get("movie"));

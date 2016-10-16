@@ -9,5 +9,5 @@ module.exports = function (app) {
     app.get('/movie_rating/:id', movieRating.findById);
     app.post('/movie_rating', movieRating.add);
     app.put('/movie_rating/:id', movieRating.update);
-    app.delete('/movie_rating/:id/:rev', movieRating.delete);
+    app.delete('/movie_rating/:id', movieRating.delete);
 }
