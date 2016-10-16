@@ -13,6 +13,7 @@ db.on('error', function () {
 
 var app = express();
 
+app.use(express.static('public'));
 app.use(bodyParser());
 
 require('./models/movie_rating');
