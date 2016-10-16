@@ -16,13 +16,32 @@ exports.findById = function (req, res) {
     });
 };
 exports.add = function (req, res) {
-    res.send('added one');
+    ForumPost.create(req.body, function (err, forumPost) {
+        if (err) {
+            return console.log(err);
+        }
+        return res.send(forumPost);
+    })
 };
 exports.update = function (req, res) {
-    res.send('update one');
+    var id = req.params.id;
+    var updates = req.body;
+
+    ForumPost.update({"_id":id}, req.body,
+    function (err, numberAffected) {
+        if (err) {
+            return console.log(err);
+        }
+        console.log("Updated %d forum post", numberAffected.n);
+        return res.sendStatus(202);
+    })
 };
 exports.delete = function (req, res) {
-    res.send('deleted one');
+    var id = req.params.id;
+    var rev = req.params.rev;
+    ForumPost.remove({'_id': id, '__v': rev}, function (result) {
+        return res.send(result);
+    })
 };
 exports.import = function (req, res) {
     ForumPost.create(
@@ -35,7 +54,7 @@ exports.import = function (req, res) {
             if (err) {
                 return console.log(err);
             }
-            return res.send(202);
+            return res.sendStatus(202);
         }
     )
 }
