@@ -10,7 +10,10 @@ exports.findAll = function (req, res) {
     //res.send('got all');
 };
 exports.findById = function (req, res) {
-    res.send('got it by id');
+    var id = req.params.id;
+    ForumPost.findOne({'_id':id}, function (err, result) {
+        return res.send(result);
+    });
 };
 exports.add = function (req, res) {
     res.send('added one');
