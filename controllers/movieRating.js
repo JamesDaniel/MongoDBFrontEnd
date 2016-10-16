@@ -7,7 +7,6 @@ exports.findAll = function (req, res) {
     MovieRating.find({}, function(err, results) {
         return res.send(results);
     });
-    //res.send('got all');
 };
 exports.findById = function (req, res) {
     var id = req.params.id;

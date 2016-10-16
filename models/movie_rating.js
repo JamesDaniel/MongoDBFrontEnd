@@ -5,9 +5,22 @@ var Mongoose = require('mongoose');
 Schema = Mongoose.Schema;
 
 var MovieRatingsSchema = new Schema({
-    username: String,
-    fname: String,
-    lname: String
+    user: {
+        id: Number,
+        username: String,
+        age: Number,
+        gender: String,
+        occupation: String,
+        zipCode: String
+    },
+    movie: {
+        title: String,
+        genres: [String]
+    },
+    rating: {
+        stars: Number,
+        timestamp: Number
+    }
 });
 
 Mongoose.model('MovieRating', MovieRatingsSchema);
