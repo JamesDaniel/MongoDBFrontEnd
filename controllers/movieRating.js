@@ -32,12 +32,12 @@ exports.update = function (req, res) {
             return console.log(err);
         }
         console.log("Updated %d movie ratings.", numberAffected.n);
-        return res.sendStatus(202);
+        return res.json(req.body);
     })
 };
 exports.delete = function (req, res) {
     var id = req.params.id;
     MovieRating.remove({'_id': id}, function (result) {
-        return res.send(result);
+        return res.json(result);
     });
 };

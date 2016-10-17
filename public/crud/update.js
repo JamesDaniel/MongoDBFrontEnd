@@ -1,4 +1,4 @@
-var movieRating = new MovieRating({ _id: "5803e100c2fde41a4925bd30"});
+var movieRating = new MovieRating({ _id: "5804d27a06bc7c0fb7620019"});
 movieRating.fetch({
     success: function (movieRatingResponse) {
         console.log("Found the movieRating: " + movieRatingResponse.get("movie"));
@@ -9,7 +9,7 @@ movieRating.fetch({
                 console.log("The model has been updated to the server");
             },
             error : function (model, xhr, options) {
-                console.log("Something went wrong while updating the model: " + JSON.stringify(model));
+                console.log("Something went wrong while updating the model: " + JSON.stringify(xhr));
             }
         });
     }

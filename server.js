@@ -2,6 +2,7 @@ var express = require('express');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var fs = require('fs');
+var path = require('path');
 
 var mongoUri = 'mongodb://localhost:27017/movie_rating';
 mongoose.connect(mongoUri);
@@ -13,7 +14,7 @@ db.on('error', function () {
 
 var app = express();
 
-app.use(express.static('public'));
+app.use(express.static(__dirname + '/public'));
 app.use(bodyParser());
 
 require('./models/movie_rating');
