@@ -1,0 +1,10 @@
+{
+  "MovieRating": {
+    "dbConfig": {
+      "host": "localhost"
+    },
+    "credit": {
+      "initialDays": 30
+    }
+  }
+}

@@ -3,8 +3,13 @@ var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var fs = require('fs');
 var path = require('path');
+var config = require('config');
 
-var mongoUri = 'mongodb://localhost:27017/movie_rating';
+var appPort = config.get('MovieRating.appConfig.port');
+var host = config.get('MovieRating.dbConfig.host');
+var dbPort = config.get('MovieRating.dbConfig.port');
+var dbName = config.get('MovieRating.dbConfig.dbName');
+var mongoUri = 'mongodb://' + host + ':' + dbPort + '/' + dbName;
 mongoose.connect(mongoUri);
 var db = mongoose.connection;
 db.on('error', function () {
@@ -20,5 +25,5 @@ app.use(bodyParser());
 require('./models/movie_rating');
 require('./routes')(app);
 
-app.listen(3001);
+app.listen(appPort);
 console.log('server running');

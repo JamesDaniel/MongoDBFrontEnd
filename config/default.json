@@ -1,0 +1,18 @@
+{
+  // movie_rating module configs
+  "MovieRating": {
+    "dbConfig": {
+      "host": "localhost",
+      "port": 27017,
+      "dbName": "movie_rating"
+    },
+    "appConfig": {
+      "port": 3001
+    },
+    "credit": {
+      "initialLimit": 100,
+      // Set low for development
+      "initialDays": 1
+    }
+  }
+}
