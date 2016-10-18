@@ -4,7 +4,7 @@
 
 $(document).ready(function () {
     $("#saveButton").click(function () {
-alert('clicked save');
+        alert('saved');
         var movieRating = new MovieRating({
             "user": {
                 "id": $('#id').val(),
