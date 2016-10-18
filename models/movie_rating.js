@@ -2,7 +2,7 @@
  * Created by user on 13/10/16.
  */
 var Mongoose = require('mongoose');
-Schema = Mongoose.Schema;
+var Schema = Mongoose.Schema;
 
 var MovieRatingsSchema = new Schema({
     user: {
