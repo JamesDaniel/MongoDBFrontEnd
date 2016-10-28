@@ -4,12 +4,14 @@
 var mongoose = require('mongoose');
 var MovieRating = mongoose.model('MovieRating');
 exports.findAll = function (req, res) {
+    console.log("Server received GET request.");
     MovieRating.find({}, function(err, results) {
         return res.send(results);
     });
 };
 exports.findById = function (req, res) {
     var id = req.params.id;
+    console.log("server received GET request.");
     MovieRating.findOne({'_id':id}, function (err, result) {
         return res.send(result);
     });
@@ -19,6 +21,7 @@ exports.add = function (req, res) {
         if (err) {
             return console.log(err);
         }
+        console.log("server received post request.");
         return res.send(movieRating);
     })
 };
@@ -37,6 +40,7 @@ exports.update = function (req, res) {
 };
 exports.delete = function (req, res) {
     var id = req.params.id;
+    console.log("server received delete request.");
     MovieRating.remove({'_id': id}, function (result) {
         return res.json(result);
     });
