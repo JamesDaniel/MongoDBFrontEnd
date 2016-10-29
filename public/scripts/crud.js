@@ -70,11 +70,22 @@ var crud = (function () {
             console.log("delete succeeded");
         };
         rest.destroy("http://localhost:3001/movie_rating/" + $('#documentId').val(), success);
+    };
+    var mapReduce = function () {
+        var success = function (data, status, xhr) {
+            data.forEach(function (entry) {
+                $('#content').append("Movie title: " + entry._id + "<br />");
+                $('#content').append("Number of ratings: " + entry.value + "<br /><br />");
+            });
+        };
+        rest.get("http://localhost:3001/movie_rating_reduce/map_reduce", success);
+        console.log("map reduce called.");
     }
     return {
         create: create,
         read: read,
         update: update,
-        destroy: destroy
+        destroy: destroy,
+        mapReduce: mapReduce
     }
 }());

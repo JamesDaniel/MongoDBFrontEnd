@@ -16,4 +16,7 @@ $(document).ready(function () {
     $('#submitDelete').click(function () {
         crud.destroy();
     });
+    $('#submitMapReduce').click(function () {
+        crud.mapReduce();
+    });
 });
