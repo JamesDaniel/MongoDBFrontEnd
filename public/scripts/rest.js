@@ -4,23 +4,22 @@
 var rest = (function () {
 
     function POSTError () {
-        console.log("There was a problem accessing the POST rest end point.");
+        console.log("There was a problem accessing a POST rest end point.");
     };
     function GETError () {
-        console.log("There was a problem accessing the GET rest end point.");
+        console.log("There was a problem accessing a GET rest end point.");
     };
     function PUTError () {
-        console.log("There was a problem accessing the PUT rest end point.");
+        console.log("There was a problem accessing a PUT rest end point.");
     };
     function DELETEError () {
-        console.log("There was a problem accessing the DELETE rest end point.");
+        console.log("There was a problem accessing a DELETE rest end point.");
     };
 
 
 
 
     var post = function (url, data, success) {
-        //$.post(url, data, success, "json");
         $.ajax({
             url: url,
             type: "POST",
@@ -30,7 +29,6 @@ var rest = (function () {
         })
     };
     var get = function (url, success) {
-        //$.post(url, success);
         $.ajax({
             url: url,
             type: 'GET',
