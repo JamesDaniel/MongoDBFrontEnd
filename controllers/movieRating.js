@@ -4,7 +4,7 @@
 var mongoose = require('mongoose');
 var MovieRating = mongoose.model('MovieRating');
 exports.findAll = function (req, res) {
-    console.log("Server received GET request.");
+    console.log("Server received GET request. right here");
     MovieRating.find({}, function(err, results) {
         return res.send(results);
     });
@@ -42,6 +42,15 @@ exports.delete = function (req, res) {
     var id = req.params.id;
     console.log("server received delete request.");
     MovieRating.remove({'_id': id}, function (result) {
+        return res.json(result);
+    });
+};
+exports.mapReduce = function (req, res) {
+    var o = {};
+    o.map = function () { emit(this.movie.title, 1); };
+    o.reduce = function (k, vals) { return vals.length };
+    MovieRating.mapReduce(o, function (err, result) {
+        console.log("server received mapReduce request.");
         return res.json(result);
     });
 };

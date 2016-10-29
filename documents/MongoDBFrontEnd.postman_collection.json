@@ -7,13 +7,32 @@
 		"32f6f6ba-8d6d-0c1e-5dda-9eacf4b85f25",
 		"19b4e691-4bd8-6175-8f83-9c142311a764",
 		"cedd7a93-7eab-6ef1-bf2c-c5c1fa72eb40",
-		"49380143-1e43-39b4-82f8-1f116aa7f2df"
+		"49380143-1e43-39b4-82f8-1f116aa7f2df",
+		"04eadc83-7f8d-2f96-21d2-74b246546271"
 	],
 	"folders": [],
 	"timestamp": 0,
 	"owner": "612867",
 	"public": false,
 	"requests": [
+		{
+			"id": "04eadc83-7f8d-2f96-21d2-74b246546271",
+			"headers": "",
+			"url": "localhost:3001/movie_rating_reduce/map_reduce",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1477777806689,
+			"name": "map reduce",
+			"description": "localhost:3001/movie_rating_reduce/map_reduce",
+			"collectionId": "3490f8b5-75a3-69e1-7150-41c18b2b7183",
+			"responses": []
+		},
 		{
 			"id": "19b4e691-4bd8-6175-8f83-9c142311a764",
 			"headers": "",
@@ -59,7 +78,7 @@
 		{
 			"id": "49380143-1e43-39b4-82f8-1f116aa7f2df",
 			"headers": "",
-			"url": "localhost:3001/movie_rating/5803d69683a43315b679e14f/0",
+			"url": "localhost:3001/movie_rating/5803e0bcc2fde41a4925bd2f",
 			"preRequestScript": null,
 			"pathVariables": {},
 			"method": "DELETE",
@@ -69,7 +88,7 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1476649605869,
+			"time": 1476655795519,
 			"name": "delete one",
 			"description": "localhost:3001/forum_post/asdfsdafsd/asdfasd",
 			"collectionId": "3490f8b5-75a3-69e1-7150-41c18b2b7183",

@@ -10,4 +10,5 @@ module.exports = function (app) {
     app.post('/movie_rating', movieRating.add);
     app.put('/movie_rating/:id', movieRating.update);
     app.delete('/movie_rating/:id', movieRating.delete);
-}
+    app.get('/movie_rating_reduce/map_reduce', movieRating.mapReduce);
+};
