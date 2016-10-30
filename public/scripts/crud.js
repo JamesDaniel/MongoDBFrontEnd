@@ -38,13 +38,14 @@ var crud = (function () {
             $('#genres').html("Genres: " + data.movie.genres);
             $('#stars').html("Stars: " + data.rating.stars);
             $('#timestamp').html("Timestamp: " + data.rating.timestamp);
+            console.log("read success");
         };
         rest.get("http://localhost:3001/movie_rating/" + $('#documentId').val(), success);
         console.log("read called.");
     };
     var update = function () {
         var success = function (data, status, xhr) {
-            console.log("post succeeded");
+            console.log("update succeeded");
         };
         rest.put("http://localhost:3001/movie_rating/" + $('#documentId').val(), {
             "user": {
@@ -73,14 +74,17 @@ var crud = (function () {
     };
     var mapReduce = function () {
         var success = function (data, status, xhr) {
+            $('#content').html("");
             data.forEach(function (entry) {
                 $('#content').append("Movie title: " + entry._id + "<br />");
                 $('#content').append("Number of ratings: " + entry.value + "<br /><br />");
             });
+            console.log("map reduce succeeded");
         };
         rest.get("http://localhost:3001/movie_rating_reduce/map_reduce", success);
         console.log("map reduce called.");
-    }
+    };
+
     return {
         create: create,
         read: read,

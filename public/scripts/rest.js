@@ -16,9 +16,6 @@ var rest = (function () {
         console.log("There was a problem accessing a DELETE rest end point.");
     };
 
-
-
-
     var post = function (url, data, success) {
         $.ajax({
             url: url,
@@ -53,8 +50,6 @@ var rest = (function () {
             error: DELETEError
         });
     };
-
-
 
     return {
         post: post,

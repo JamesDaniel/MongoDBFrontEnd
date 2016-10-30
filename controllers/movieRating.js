@@ -41,7 +41,7 @@ exports.update = function (req, res) {
 exports.delete = function (req, res) {
     var id = req.params.id;
     console.log("server received delete request.");
-    MovieRating.remove({'_id': id}, function (result) {
+    MovieRating.remove({'_id': id}, function (err, result) {
         return res.json(result);
     });
 };

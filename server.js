@@ -13,8 +13,8 @@ var mongoUri = 'mongodb://' + host + ':' + dbPort + '/' + dbName;
 mongoose.connect(mongoUri);
 var db = mongoose.connection;
 db.on('error', function () {
-    throw new Error('unable to connect to database at ' + mongoUri);
     console.log('database error');
+    throw new Error('unable to connect to database at ' + mongoUri);
 });
 
 var app = express();
